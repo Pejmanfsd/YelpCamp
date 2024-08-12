@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Step 15(C): We define the "BOILERPLATE!" title to check if it's working or not -->
+    <title>YelpCamp</title>
+    <!-- Step 16(A): Go to Bootstrap 5 website
+    https://getbootstrap.com/docs/5.0/getting-started/introduction/
+    Copy the "CSS" section and paste it here: -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body class="d-flex flex-column vh-100">
+    <!-- The "d-flex flex-column vh-100" class will be usefull for the "footer.ejs" -->
+    <!-- Step 15(D): We define the "BEFORE" and the "AFTER" headings to check if it's working or not -->
+    <!-- <h1>BEFORE</h1> -->
+    <!-- Step 15(E): We define the "- body" line as the rules
+    -> now in other ejs files, remove the fix parts (that have been mentioned here)
+    and add "layout('layouts/boilerplate')" on top of them
+    Do the same for all the ejs files -->
+    <!-- Step 17(H): Include the navbar.ejs -->
+    <%- include('../partials/navbar') %>
+        <!-- Step 16(C): Put the "- body" part in the <main> tag
+        and assign the "container" class to this tag.
+        mt = margin top -->
+        <main class="container mt-5">
+            <!-- Step 31(E): Adding the success variable in template: -->
+            <!-- < % = success %> -->
+            <!-- Step 31(G): Including the "flash.ejs" file here: -->
+            <%- include('../partials/flash') %>
+                <!-- Now we see a green box in all the pages all the time,
+            so we should add an if condition on "flash.ejs" -->
+                <%- body %>
+        </main>
+        <!-- <h1>AFTER</h1> -->
+        <!-- Step 17(A): Create the "partials" folder in the "views" folder,
+    there, create the "navbar.ejs" file -->
+        <!-- Step 15(K): Comment The 2 <h1> tags: "<h1>BEFORE</h1>" and "<h1>AFTER</h1>" -->
+        <!-- Step 16(B): Copy the 2 links of the "Separate" part of "JS" and paste them here: -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+            crossorigin="anonymous"></script>
+        <!-- Step 18(A): Create the "footer.ejs" file in the "partials" folder -->
+        <!-- Step 18(C): Include the navbar.ejs -->
+        <!-- Step 21(ZA): Paste the <script> tag here: -->
+        <!-- Step 29(A): Create the "public" folder in the main directory, with different appropriate
+        folders and use the "public" folder in app.js -->
+        <!-- Step 29(C): Create the "validateForms.js" in the "public/javascripts" folder and Move the
+        content of "validation" <script> to "validateForms.js" and remove/comment it from here
+        and replace the <script> tag with the source of the file's directory which is:
+        "src='/javascripts/validateForms.js'" -->
+        <script src='/javascripts/validateForms.js'>
+            // (function () {
+            //     'use strict'
+            //     // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            //     const forms = document.querySelectorAll('.validated-form')
+            //     // Loop over them and prevent submission
+            //     Array.prototype.slice.call(forms) // Changing the form into an array
+            //         .forEach(function (form) { // Looping over the array
+            //             form.addEventListener('submit', function (event) { // Adding an EventListener to the form
+            //                 if (!form.checkValidity()) { // If the form is not valid
+            //                     event.preventDefault() // Stoping the default behaviour of the form
+            //                     event.stopPropagation() // Stoping the submiting process
+            //                 }
+            //                 form.classList.add('was-validated')
+            //             }, false)
+            //         })
+            // })()
+        </script>
+        <%- include('../partials/footer') %>
+</body>
+
+</html>

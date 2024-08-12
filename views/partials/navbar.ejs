@@ -1,0 +1,35 @@
+<!-- Step 17(B): In the Bootstrap 5 website, go to the "components" section, navbar
+and in the "Nav" section copy the second part and paste it here: -->
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <!-- In the class of this navbar, change the "light" word to "dark" and add "sticky-top" -->
+    <div class="container-fluid">
+        <!-- Step 17(C): Change the title of the navbar to "YelpCamp" -->
+        <a class="navbar-brand" href="#">YelpCamp</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <!-- Step 17(D): Remove the "aria-current="page"" part and the "active" key
+                and type the appropriate route for the "href" part -> href="/" -->
+                <a class="nav-link active" href="/">Home</a>
+                <!-- Step 17(E): type the appropriate route for the "href" part -> href="/campgrounds" -->
+                <a class="nav-link" href="/campgrounds">Campgrounds</a>
+                <!-- Step 17(F): type the appropriate route for the "href" part -> href="/campgrounds/new" -->
+                <a class="nav-link" href="/campgrounds/new">New Campground</a>
+                <!-- Step 17(G): Remove/Comment the last <a> tag -->
+                <!-- <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> -->
+            </div>
+        </div>
+        <!-- Step 35(B): Creating the "Login" and "Logout" buttons -->
+        <div class="navbar-nav ml-auto">
+            <% if(!currentUser) { %>
+                <a class="nav-link" href="/register">Register</a>
+                <a class="nav-link" href="/login">Login</a>
+                <% } else { %>
+                    <a class="nav-link" href="/logout">Logout</a>
+                    <% } %>
+        </div>
+    </div>
+</nav>

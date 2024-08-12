@@ -1,0 +1,26 @@
+<!-- Step 31(F): Create this file(flash.ejs) in
+"views/partials" directory Create a <div> tag with
+"alert" classes and "alert" role and display
+the "success" variable inside the <div> -->
+<% if(success && success.length) { %>
+    <!-- add the if condition; only if the "success"
+    variable exists AND it's not empty show the flash -->
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <%= success %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+    </div>
+    <% } %>
+
+        <!-- Step 31(L): Creating the flash messages for errors: -->
+        <% if(error && error.length) { %>
+            <!-- add the if condition; only if the "error"
+            variable exists AND it's not empty show the flash -->
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <%= error %>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+            </div>
+            <% } %>
